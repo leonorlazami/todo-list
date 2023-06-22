@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Indie Flower", cursive;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #91a1bf;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: auto;
+  width: 60vh;
+  margin: 250px auto;
+  border-radius: 10px;
+  background-color: #586274;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  text-align: center;
+  color: #f8cf8b;
+}
+input {
+  height: 25px;
+  border-radius: 8px;
+  border: solid 3.5px black;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #f8cf8b;
+}
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  color: black;
+}
+.form-container {
+  display: flex;
+}
+form {
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+li:checked {
+  text-decoration: line-through;
+}
+.the-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items at the start of the container */
+  width: inherit;
+  max-height: 80vh;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul > li {
+  text-decoration: none;
+  font-size: 25px;
+  color: #f8cf8b;
+  list-style-type: none;
+  margin: 10px 35px;
+}
+
+.add-todo,
+.select,
+.clear-list {
+  margin-left: 20px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 7px 15px 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+  background: transparent;
+  color: #000000;
+  box-shadow: 0 0 0 3px #000000 inset;
+}
+.add-todo:hover,
+.clear-list:hover {
+  transform: translateX(2.3px);
+}
+.completed {
+  text-decoration: line-through;
+}
+
+.remove-todo {
+  margin-left: 25px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  background: transparent;
+  color: #000000;
+  box-shadow: 0 0 0 3px #000000 inset;
+}
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-custom {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 3px;
+  margin-right: 25px;
+}
+
+.checkbox-custom.checked {
+  background-color: #000;
+}
+
+.checkbox-custom.checked::after {
+  content: "";
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 5px;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+.select {
+  padding: 4px;
+}
+option {
+  background-color: #f8cf8b;
+}
+
+.clear-list {
+  padding: 0 10px;
+}
+.select,
+.clear-list {
+  margin-top: 50px;
 }
